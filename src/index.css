@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-headline: "Oswald", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Vintage Newsprint textures and ink effects */
+.bg-newsprint {
+  background-color: #f6f2e9;
+  background-image: radial-gradient(#d3c9b8 0.75px, transparent 0.75px), radial-gradient(#d3c9b8 0.75px, #f6f2e9 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.bg-newsprint-aged {
+  background-color: #eeddc3;
+  background-image: radial-gradient(#cbb292 0.75px, transparent 0.75px), radial-gradient(#cbb292 0.75px, #eeddc3 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.bg-newsprint-dark {
+  background-color: #171513;
+  background-image: radial-gradient(#2c2925 0.75px, transparent 0.75px), radial-gradient(#2c2925 0.75px, #171513 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Editorial Drop Caps */
+.editorial-drop-cap::first-letter {
+  font-family: var(--font-display);
+  float: left;
+  font-size: 3.75rem;
+  line-height: 0.8;
+  font-weight: 700;
+  margin-right: 0.65rem;
+  margin-top: 0.2rem;
+  color: #1c1917;
+}
+
+/* Halftone grain overlay */
+.halftone-overlay {
+  position: relative;
+}
+.halftone-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(black 1px, transparent 0);
+  background-size: 4px 4px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Print styling for real newspaper physical output */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .newspaper-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}

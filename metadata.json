@@ -1,0 +1,6 @@
+{
+  "name": "La Gazette du Manager",
+  "description": "Le journal sportif satirique, vintage et caustique officiel de la ligue MPG. Chroniques au vitriol, lore des 7 écuries et générateur d'éditions à la rotative.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
